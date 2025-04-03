@@ -6,7 +6,7 @@
       "version": "3.11"
     }
   },
-  "postCreateCommand": "pip install jupyter playwright && playwright install",
+  "postCreateCommand": "apt-get update && apt-get install -y xvfb && pip install jupyter playwright nest_asyncio && playwright install",
   "portsAttributes": {
     "8888": {
       "label": "Jupyter Notebook",
