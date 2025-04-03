@@ -1,0 +1,29 @@
+{
+  "name": "Jupyter & Playwright Environment",
+  "image": "mcr.microsoft.com/playwright/python:v1.43.0-jammy",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    }
+  },
+  "postCreateCommand": "pip install jupyter playwright && playwright install",
+  "portsAttributes": {
+    "8888": {
+      "label": "Jupyter Notebook",
+      "onAutoForward": "openBrowser"
+    },
+    "9222": {
+      "label": "Playwright Debugging",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-playwright.playwright"
+      ]
+    }
+  }
+}
